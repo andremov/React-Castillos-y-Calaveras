@@ -47,7 +47,6 @@ export class Ability extends Component {
                         {data.name}
                     </div>
 
-
                     <div className={'code sans'}>
                         {data.code}
                     </div>
@@ -57,13 +56,13 @@ export class Ability extends Component {
                     {data.description_long}
                 </div>
 
-                <div className={'skills'}>
+                <div>
 
-                    <div className={'title serif'}>
+                    <div className={'header2 serif'}>
                         {titleCase(terms.skill.plural)}
                     </div>
 
-                    <ul className={'list'}>
+                    <ul>
                         {
                         data.skills.map(item =>
                             <li key={data.skills.indexOf(item)} className={'item sans'}>
@@ -74,8 +73,8 @@ export class Ability extends Component {
                     </ul>
                 </div>
 
-                <div className={'checks'}>
-                    <div className={'title serif'}>
+                <div>
+                    <div className={'header2 serif'}>
                         {titleCase(
                             (id === 0 ?
                             terms.rolls.ability.str.plural :
@@ -96,7 +95,7 @@ export class Ability extends Component {
                         {data.description_checks}
                     </div>
 
-                    <ul className={'list'}>
+                    <ul>
                         {
                         data.checks.map(item => { return(
                             <li key={data.checks.indexOf(item)} className={'item sans'}>

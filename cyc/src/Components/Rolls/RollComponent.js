@@ -1,37 +1,37 @@
 import React, {Component} from 'react';
 import {titleCase} from "../../Utilities";
 import {terms} from "../../Terms";
-import {contest, diceRolls, group, passive} from "../../Parts";
-import {Link} from "react-router-dom";
+import {Link, Route, Switch, withRouter} from "react-router-dom";
+import {Intro} from "./Intro";
+import {Roll} from "./Roll";
 
-
-
-export class RollComponent extends Component {
+class RollComponent extends Component {
     render() {
         return (
             <div className={'page'}>
-                <div className={'page-title serif bold'}>
+                <Link to={'/rolls'} className={'page-title serif bold'}>
                     {titleCase(terms.rolls.plural)}
-                </div>
+                </Link>
 
                 <div className={'page-body'}>
-
-                    {diceRolls(false)}
-
-                    <Link to={'/rolls/check'} className={'serif'}>
-                        {terms.rolls.ability.long.singular}
-                    </Link>
-
-                    <Link to={'/rolls/saving'} className={'serif'}>
-                        {terms.rolls.saving.singular}
-                    </Link>
-
-                    <Link to={'/rolls/attack'} className={'serif'}>
-                        {terms.rolls.attack.singular}
-                    </Link>
-
+                    <Switch>
+                        <Route exact path="/rolls">
+                            <Intro />
+                        </Route>
+                        <Route exact path="/rolls/saving">
+                            <Roll info={'saving'} />
+                        </Route>
+                        <Route exact path="/rolls/check">
+                            <Roll info={'check'} />
+                        </Route>
+                        <Route exact path="/rolls/attack">
+                            <Roll info={'attack'} />
+                        </Route>
+                    </Switch>
                 </div>
             </div>
         );
     }
 }
+
+export default withRouter(RollComponent);

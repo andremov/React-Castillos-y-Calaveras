@@ -35,6 +35,18 @@ export var terms = {
         singular : "skill",
         plural : "skills"
     },
+    spell : {
+        singular : "spell",
+        plural : "spells"
+    },
+    traits : {
+        singular : "trait",
+        plural : "traits"
+    },
+    inspiration : {
+        singular : "inspiration",
+        plural : "inspirations"
+    },
     rolls : {
         singular : "roll",
         plural : "rolls",
@@ -109,6 +121,16 @@ export var terms = {
         short : {
             singular : "DC",
             plural : "DCs"
+        }
+    },
+    ac : {
+        long : {
+            singular : "Armor Class",
+            plural : "Armor Classes"
+        },
+        short : {
+            singular : "AC",
+            plural : "ACs"
         }
     },
     bonus : {

@@ -5,62 +5,44 @@ import './ability.scss';
 import {terms} from '../../Terms';
 import {AbilityIcon} from "./AbilityIcon";
 import {titleCase} from "../../Utilities";
+import {withRouter, Route, Switch, Link} from "react-router-dom";
 
-export class AbilityComponent extends Component {
-
-    state = {
-      ability : -1
-    };
+class AbilityComponent extends Component {
 
     setAbout = () => {
-        this.setState({
-            ability: -1
-        })
+        this.props.history.push('/abilities')
     };
 
     setCha = () => {
-        this.setState({
-            ability: 5
-        })
+        this.props.history.push('/abilities/cha')
     };
 
     setStr = () => {
-        this.setState({
-            ability: 0
-        })
+        this.props.history.push('/abilities/str')
     };
 
     setCon = () => {
-        this.setState({
-            ability: 2
-        })
+        this.props.history.push('/abilities/con')
     };
 
     setDex = () => {
-        this.setState({
-            ability: 1
-        })
+        this.props.history.push('/abilities/dex')
     };
 
     setInt = () => {
-        this.setState({
-            ability: 3
-        })
+        this.props.history.push('/abilities/int')
     };
 
     setWis = () => {
-        this.setState({
-            ability: 4
-        })
+        this.props.history.push('/abilities/wis')
     };
 
     render() {
-        let {ability} = this.state;
         return (
             <div className={'page'}>
-                <div className={'page-title serif bold'}>
+                <Link to={'/abilities'} className={'page-title serif bold'}>
                     {titleCase(terms.ability.plural)}
-                </div>
+                </Link>
 
                 <div className={'ability-menu'}>
                     <AbilityIcon ability={0} tooltip={"Información"} onClick={this.setAbout}/>
@@ -74,7 +56,29 @@ export class AbilityComponent extends Component {
 
                 <div className={'page-body'}>
 
-                    { ability === -1? <Intro /> : <Ability info={ability} /> }
+                    <Switch>
+                        <Route exact path="/abilities">
+                            <Intro />
+                        </Route>
+                        <Route exact path="/abilities/str">
+                            <Ability info={0}/>
+                        </Route>
+                        <Route exact path="/abilities/dex">
+                            <Ability info={1}/>
+                        </Route>
+                        <Route exact path="/abilities/con">
+                            <Ability info={2}/>
+                        </Route>
+                        <Route exact path="/abilities/int">
+                            <Ability info={3}/>
+                        </Route>
+                        <Route exact path="/abilities/wis">
+                            <Ability info={4}/>
+                        </Route>
+                        <Route exact path="/abilities/cha">
+                            <Ability info={5}/>
+                        </Route>
+                    </Switch>
 
                 </div>
             </div>
@@ -82,3 +86,5 @@ export class AbilityComponent extends Component {
     }
 
 }
+
+export default withRouter(AbilityComponent);

@@ -73,7 +73,7 @@ export function passive(subtitle = true) {
     )
 }
 
-export function group(subtitle = true) {
+export function groupChecks(subtitle = true) {
     return (
         <Fragment>
 
@@ -110,7 +110,7 @@ export function group(subtitle = true) {
     )
 }
 
-export function contest(subtitle = true) {
+export function contests(subtitle = true) {
     return (
         <Fragment>
 
@@ -139,6 +139,81 @@ export function contest(subtitle = true) {
                 la {terms.rolls.contest.singular} por defecto.
             </div>
 
+        </Fragment>
+    )
+}
+
+export function abilityChecks(subtitle = true) {
+    return (
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.rolls.ability.short.plural)}
+            </div>
+
+            <div className={'description'}>
+                Un {terms.rolls.ability.long.singular} pone a prueba el talento innato y el
+                entrenamiento de un personaje o monstruo en un esfuerzo
+                por superar un desafío. El {terms.gm} pide un {terms.rolls.ability.long.singular} cuando
+                un personaje o monstruo intenta una acción
+                (que no sea un ataque) que tiene la posibilidad de fallar.
+                Cuando el resultado es incierto, los dados determinan los resultados.
+                <br/><br/>
+                Para cada {terms.rolls.ability.long.singular}, el {terms.gm} decide cuál
+                de {fancyAbilities()} es relevante para la tarea en cuestión
+                y la dificultad de la tarea, representada por un {terms.dc.long.singular}.
+                <br /><br />
+                Cuanto más difícil es una tarea, mayor es su {terms.dc.short.singular}.
+
+            </div>
+
+        </Fragment>
+    )
+}
+
+export function attackRolls(subtitle = true) {
+    return (
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.rolls.attack.plural)}
+            </div>
+
+            <div className={'description'}>
+                Un {terms.rolls.attack.singular} determina si un ataque
+                golpea o falla.
+                <br /><br />
+                Para hacer un {terms.rolls.attack.singular}, tira un d20 y agrega
+                los {terms.ability.modifier.short.plural} apropiados.
+                <br /><br />
+                Si el total del {terms.rolls.attack.singular} es igual o superior
+                al {terms.ac.long.singular} del objetivo, el ataque golpea.
+            </div>
+        </Fragment>
+    )
+}
+
+export function savingThrows(subtitle = false) {
+    return (
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.rolls.saving.plural)}
+            </div>
+
+            <div className={'description'}>
+                Un {terms.rolls.saving.singular} representa un intento
+                de resistir una amenaza. Usualmente, estás obligado a
+                hacer un {terms.rolls.saving.singular} porque tu personaje está en riesgo.
+                <br /><br />
+                Para hacer un {terms.rolls.saving.singular}, tira un d20 y
+                agrega el {terms.ability.modifier.long.singular} apropiado.
+                <br /><br />
+                La {terms.dc.long.singular} para un {terms.rolls.saving.singular}
+                está determinada por el efecto que lo causa.
+                <br /><br />
+                El resultado de un {terms.rolls.saving.singular} exitoso o
+                fallido también se detalla en el efecto que lo permite.
+                Por lo general, un exito significa que una criatura no sufre daño, o se reduce
+                el daño.
+            </div>
         </Fragment>
     )
 }

@@ -1,38 +1,148 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap');
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1vw;
+  line-height: 1;
+  background-color: black;
+  margin: 0 0 50px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-title {
+  width: 100%;
   text-align: center;
+  font-size: 8rem;
+  line-height: 1.2;
+  background-color: white;
+  margin-bottom: 2%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.page {
+  font-size: 1.25rem;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .page-title {
+    display: block;
+    font-size: 5rem;
+    line-height: 1;
+    text-align: center;
+    width: 90%;
+    border-radius: 20px;
+    margin: auto auto 2%;
+    color: white;
+    cursor: pointer;
+    filter: invert(0);
+    transition: 0.2s;
+    background-color: black;
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
+  .page-body {
+    width : 90%;
+    margin: auto;
+    background-color: white;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header1 {
+  font-size: 3.5rem;
+  margin-bottom: 3%;
+}
+
+.header2 {
+  font-size: 2.25rem;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.header3 {
+  font-size: 1.75rem;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.description {
+  margin-right: 10%;
+  margin-left: 2%;
+  width: 80%;
+}
+
+.sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.serif {
+  font-family: 'Ibarra Real Nova', serif;
+
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+.arrow-btn {
   color: white;
+  margin: 1%;
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
+
+  filter: invert(0);
+  transition: 0.2s;
+
+  &:hover {
+    filter: invert(0.75);
+  }
+
+  &.border-left {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  &.border-right {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .arrow-btn-body {
+    background-color: black;
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  .arrow-btn-tail {
+
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 50%, 0 100% );
+  }
+
+  .arrow-btn-head {
+    transform: translate(1px,0);
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(100% 0, 0% 50%, 100% 100% );
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.more-info-btn {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: black;
+  cursor: pointer;
+  font-style: italic;
 }

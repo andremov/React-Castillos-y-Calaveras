@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {AbilityModsTable} from "../AbilityModsTable";
 import {terms} from "../../Terms";
-import {fancyAbilities} from "../../Parts";
+import {abilityChecks, fancyAbilities} from "../../Parts";
 import {titleCase} from "../../Utilities";
 
 export class Intro extends Component {
@@ -16,7 +16,7 @@ export class Intro extends Component {
 
                 {this.introduction()}
                 {this.modifierSection()}
-                {this.checks()}
+                {abilityChecks()}
 
             </div>
         );
@@ -52,34 +52,6 @@ export class Intro extends Component {
                     </div>
 
                     <AbilityModsTable />
-
-                </div>
-
-            </Fragment>
-        )
-    }
-
-    checks() {
-        return (
-            <Fragment>
-
-                <div className={'header2 serif bold'}>
-                    {titleCase(terms.rolls.ability.short.plural)}
-                </div>
-
-                <div className={'description'}>
-                    Un {terms.rolls.ability.long.singular} pone a prueba el talento innato y el
-                    entrenamiento de un personaje o monstruo en un esfuerzo
-                    por superar un desafío. El {terms.gm} pide un {terms.rolls.ability.long.singular} cuando
-                    un personaje o monstruo intenta una acción
-                    (que no sea un ataque) que tiene la posibilidad de fallar.
-                    Cuando el resultado es incierto, los dados determinan los resultados.
-                    <br/><br/>
-                    Para cada {terms.rolls.ability.long.singular}, el {terms.gm} decide cuál
-                    de {fancyAbilities()} es relevante para la tarea en cuestión
-                    y la dificultad de la tarea, representada por un {terms.dc.long.singular}.
-                    <br /><br />
-                    Cuanto más difícil es una tarea, mayor es su {terms.dc.short.singular}.
 
                 </div>
 
