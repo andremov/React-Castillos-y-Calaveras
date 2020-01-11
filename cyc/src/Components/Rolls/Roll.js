@@ -1,10 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {terms} from "../../Terms";
-import AbilityComponent from "../Abilities/AbilityComponent";
-import RollComponent from "./RollComponent";
-import {Route, Switch} from "react-router-dom";
 import {abilityChecks, attackRolls, contests, groupChecks, passive, savingThrows} from "../../Parts";
-import {ArrowBtn} from "../ArrowBtn";
 
 export class Roll extends Component {
 

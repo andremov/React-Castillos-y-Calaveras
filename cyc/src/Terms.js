@@ -35,6 +35,25 @@ export var terms = {
         singular : "skill",
         plural : "skills"
     },
+    alignment : {
+        singular : "alignment",
+        plural : "alignments",
+        law : "Lawful",
+        chaos : "Chaotic",
+        neutral : "Neutral",
+        good : "Good",
+        evil : "Evil"
+    },
+    hit : {
+        die : {
+            singular: "Hit Die",
+            plural: "Hit Dice"
+        },
+        points : {
+            singular : "Hit Point",
+            plural : "Hit Points"
+        }
+    },
     spell : {
         singular : "spell",
         plural : "spells"
@@ -43,9 +62,10 @@ export var terms = {
         singular : "trait",
         plural : "traits"
     },
-    inspiration : {
-        singular : "inspiration",
-        plural : "inspirations"
+    inspiration : "Inspiration",
+    level : {
+        singular : "level",
+        plural : "levels"
     },
     rolls : {
         singular : "roll",

@@ -1,49 +1,43 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import {Ability} from "./Ability";
 import {Intro} from "./Intro";
 import './ability.scss';
-import {terms} from '../../Terms';
 import {AbilityIcon} from "./AbilityIcon";
-import {titleCase} from "../../Utilities";
-import {withRouter, Route, Switch, Link} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
-class AbilityComponent extends Component {
+export class AbilityComponent extends Component {
 
     setAbout = () => {
-        this.props.history.push('/abilities')
+        this.context.history.push('/abilities')
     };
 
     setCha = () => {
-        this.props.history.push('/abilities/cha')
+        this.context.history.push('/abilities/cha')
     };
 
     setStr = () => {
-        this.props.history.push('/abilities/str')
+        this.context.history.push('/abilities/str')
     };
 
     setCon = () => {
-        this.props.history.push('/abilities/con')
+        this.context.history.push('/abilities/con')
     };
 
     setDex = () => {
-        this.props.history.push('/abilities/dex')
+        this.context.history.push('/abilities/dex')
     };
 
     setInt = () => {
-        this.props.history.push('/abilities/int')
+        this.context.history.push('/abilities/int')
     };
 
     setWis = () => {
-        this.props.history.push('/abilities/wis')
+        this.context.history.push('/abilities/wis')
     };
 
     render() {
         return (
             <div className={'page'}>
-                <Link to={'/abilities'} className={'page-title serif bold'}>
-                    {titleCase(terms.ability.plural)}
-                </Link>
-
                 <div className={'ability-menu'}>
                     <AbilityIcon ability={0} tooltip={"Información"} onClick={this.setAbout}/>
                     <AbilityIcon ability={1} tooltip={"Fuerza"} onClick={this.setStr}/>
@@ -87,4 +81,3 @@ class AbilityComponent extends Component {
 
 }
 
-export default withRouter(AbilityComponent);

@@ -1,0 +1,53 @@
+
+.arrow-btn {
+  color: white;
+  margin: 1%;
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
+
+  filter: invert(0);
+  transition: 0.2s;
+
+  &:hover {
+    filter: invert(0.75);
+  }
+
+  &.border-left {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  &.border-right {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .arrow-btn-body {
+    background-color: black;
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  .arrow-btn-tail {
+
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 50%, 0 100% );
+  }
+
+  .arrow-btn-head {
+    transform: translate(1px,0);
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(100% 0, 0% 50%, 100% 100% );
+  }
+}
+
+.more-info-btn {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: black;
+  cursor: pointer;
+  font-style: italic;
+}

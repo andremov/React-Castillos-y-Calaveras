@@ -1,0 +1,50 @@
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  margin-bottom: 1%;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .nav-btn {
+    margin: 0 !important;
+    filter: invert(0);
+    transition: 0.2s;
+    flex-grow: 1;
+    text-align: center;
+    background-color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      display: inline;
+    }
+
+    .dragon {
+      display: none;
+      width: 20%;
+      filter:invert(1);
+    }
+
+    &:hover {
+      filter: invert(1);
+    }
+
+    &.active {
+      background-color: black;
+
+      .dragon {
+        display: inline;
+      }
+
+      .text {
+        display: none;
+      }
+
+    }
+  }
+}

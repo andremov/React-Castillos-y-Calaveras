@@ -2,7 +2,6 @@ import {terms} from "./Terms";
 import React, {Fragment} from "react";
 import {titleCase} from "./Utilities";
 
-
 export function fancyAbilities() {
     return(
         <span className={'serif'}>{terms.ability.title}</span>
@@ -191,7 +190,7 @@ export function attackRolls(subtitle = true) {
     )
 }
 
-export function savingThrows(subtitle = false) {
+export function savingThrows(subtitle = true) {
     return (
         <Fragment>
             <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
@@ -215,5 +214,123 @@ export function savingThrows(subtitle = false) {
                 el daño.
             </div>
         </Fragment>
+    )
+}
+
+export function inspirationIntro(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {terms.inspiration}
+            </div>
+
+            <div className={'description'}>
+                {terms.inspiration} es una regla que el {terms.gm} puede usar para recompensar
+                a un jugador por interpretar a su personaje de una manera fiel a sus rasgos de
+                personalidad, ideales, vínculos y fallas.
+            </div>
+        </Fragment>
+    )
+}
+
+export function inspirationGain(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Ganar {terms.inspiration}
+            </div>
+
+            <div className={'description'}>
+                El {terms.gm} puede elegir dar {terms.inspiration} por una variedad de razones.
+                Por lo general, los {terms.gm} lo otorgan cuando juegan de acuerdo a su
+                personalidad, cede ante los inconvenientes presentados por un defecto o
+                vínculo y, por consiguiente, retrata a su personaje de una manera convincente.
+                <br /><br />
+                La {terms.inspiration} se tiene o no se tiene, no se puede acumular, ademas se vence.
+            </div>
+        </Fragment>
+    )
+}
+
+export function inspirationUse(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Usar {terms.inspiration}
+            </div>
+
+            <div className={'description'}>
+                Si tiene {terms.inspiration}, se puede gastar con cualquier {terms.rolls.singular}.
+                Gastar {terms.inspiration} da {terms.bonus.advantage.singular}.
+                <br /><br />
+                Un jugador puede entregar su {terms.inspiration} a otro jugador por su
+                buen juego de rol, por su inteligencia o por hacer algo emocionante en
+                el juego, si el {terms.gm} lo permite.
+            </div>
+        </Fragment>
+    )
+}
+
+export function alignment(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.alignment.plural)}
+            </div>
+
+            <div className={'description'}>
+                Una criatura típica en el mundo del juego tiene un {terms.alignment.singular},
+                que describe ampliamente sus actitudes morales y personales.
+                <br /><br />
+                El {terms.alignment.singular} es una combinación de dos factores: uno identifica la moralidad
+                ({terms.alignment.good+", "+terms.alignment.neutral+", "+terms.alignment.evil}),
+                y el otro describe las actitudes hacia la sociedad y el orden
+                ({terms.alignment.law+", "+terms.alignment.neutral+", "+terms.alignment.chaos}).
+                <br /><br />
+                Los individuos pueden variar significativamente
+                del comportamiento típico, y pocas personas son perfectas y consistentemente fieles a
+                los preceptos de su {terms.alignment.singular}.
+
+                {axis(terms.alignment.law+" "+terms.alignment.good+" (LG)",
+                    "Hacen lo correcto como lo espera la sociedad.")}
+
+                {axis(terms.alignment.neutral+" "+terms.alignment.good+" (NG)",
+                    "Hacen lo mejor que pueden para ayudar a otros según sus necesidades.")}
+
+                {axis(terms.alignment.chaos+" "+terms.alignment.good+" (CG)",
+                    "Actúan como lo dirige su conciencia, con poca consideración por lo que otros esperan.")}
+
+                {axis(terms.alignment.law+" "+terms.alignment.neutral+" (LN)",
+                    "Actúan de acuerdo con la ley, la tradición o los códigos personales.")}
+
+                {axis(terms.alignment.neutral+" (N)",
+                    "Prefieren mantenerse alejados de las cuestiones morales y no tomar partido, haciendo lo que parece mejor en ese momento.")}
+
+                {axis(terms.alignment.chaos+" "+terms.alignment.neutral+" (CN)",
+                    "Siguen sus caprichos, manteniendo su libertad personal por encima de todo.")}
+
+                {axis(terms.alignment.law+" "+terms.alignment.evil+" (LE)",
+                    "Toman metódicamente lo que quieren, dentro de los límites de un código de tradición, lealtad u orden.")}
+
+                {axis(terms.alignment.neutral+" "+terms.alignment.evil+" (NE)",
+                    "Hacen lo que pueden, sin compasión ni reparos.")}
+
+                {axis(terms.alignment.chaos+" "+terms.alignment.evil+" (CE)",
+                    "Actúan con violencia arbitraria, impulsadas por su codicia, u odio.")}
+            </div>
+        </Fragment>
+    )
+}
+
+function axis(name, description) {
+    return (
+        <div>
+            <div className={'header3 serif'}>
+                {name}
+            </div>
+            <div>
+                {description}
+            </div>
+        </div>
     )
 }

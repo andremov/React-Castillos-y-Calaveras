@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
-import {titleCase} from "../../Utilities";
-import {terms} from "../../Terms";
-import {Link, Route, Switch, withRouter} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import {Intro} from "./Intro";
 import {Roll} from "./Roll";
 
-class RollComponent extends Component {
+export class RollComponent extends Component {
     render() {
         return (
             <div className={'page'}>
-                <Link to={'/rolls'} className={'page-title serif bold'}>
-                    {titleCase(terms.rolls.plural)}
-                </Link>
-
                 <div className={'page-body'}>
                     <Switch>
                         <Route exact path="/rolls">
@@ -33,5 +27,3 @@ class RollComponent extends Component {
         );
     }
 }
-
-export default withRouter(RollComponent);

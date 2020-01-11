@@ -1,5 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import {abilities} from './AbilityInfo';
+import React, {Component} from 'react';
+import {abilities} from '../../Abilities';
 import {terms} from '../../Terms';
 import {titleCase} from '../../Utilities';
 

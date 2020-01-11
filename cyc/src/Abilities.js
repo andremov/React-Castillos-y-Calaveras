@@ -1,4 +1,4 @@
-import {terms} from "../../Terms";
+import {terms} from "./Terms";
 
 export var abilities = [
     {

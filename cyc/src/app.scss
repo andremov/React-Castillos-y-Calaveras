@@ -2,13 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap');
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1vw;
-  line-height: 1;
+  line-height: 1.05;
   background-color: black;
   margin: 0 0 50px;
 }
@@ -21,10 +19,10 @@ a {
 .main-title {
   width: 100%;
   text-align: center;
-  font-size: 8rem;
+  font-size: 7rem;
   line-height: 1.2;
   background-color: white;
-  margin-bottom: 2%;
+  margin-bottom: 0.5%;
 }
 
 .page {
@@ -32,8 +30,8 @@ a {
 
   .page-title {
     display: block;
-    font-size: 5rem;
-    line-height: 1;
+    font-size: 4.75rem;
+    line-height: 1.2;
     text-align: center;
     width: 90%;
     border-radius: 20px;
@@ -60,18 +58,18 @@ a {
 }
 
 .header1 {
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   margin-bottom: 3%;
 }
 
 .header2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   margin-top: 5%;
   margin-bottom: 2%;
 }
 
 .header3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-top: 5%;
   margin-bottom: 2%;
 }
@@ -82,67 +80,10 @@ a {
   width: 80%;
 }
 
-.sans {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .serif {
   font-family: 'Ibarra Real Nova', serif;
 
   &.bold {
     font-weight: bold;
   }
-}
-
-.arrow-btn {
-  color: white;
-  margin: 1%;
-  overflow: hidden;
-  width: fit-content;
-  display: flex;
-
-  filter: invert(0);
-  transition: 0.2s;
-
-  &:hover {
-    filter: invert(0.75);
-  }
-
-  &.border-left {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-
-  &.border-right {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .arrow-btn-body {
-    background-color: black;
-    white-space: nowrap;
-    padding: 10px;
-  }
-
-  .arrow-btn-tail {
-
-    width: 20px;
-    background-color: black;
-    clip-path: polygon(0 0, 100% 50%, 0 100% );
-  }
-
-  .arrow-btn-head {
-    transform: translate(1px,0);
-    width: 20px;
-    background-color: black;
-    clip-path: polygon(100% 0, 0% 50%, 100% 100% );
-  }
-}
-
-.more-info-btn {
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: black;
-  cursor: pointer;
-  font-style: italic;
 }
