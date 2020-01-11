@@ -1,0 +1,133 @@
+
+.ability {
+  font-size: 1.25rem;
+  width: 95%;
+
+
+  .header {
+    display: flex;
+    margin-bottom: 3%;
+
+    .name {
+      flex-grow: 0.9;
+      font-size: 3.5rem;
+      width: 50%;
+      line-height: 1;
+    }
+
+    .code {
+      width: 75px;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 2rem;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+
+  .list {
+    margin-left: 2%;
+  }
+
+  .header1 {
+    font-size: 2.25rem;
+    margin-bottom: 3%;
+    margin-top: 5%;
+  }
+
+}
+
+.ability-menu {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  .ability-icon {
+    filter: invert(1.0);
+    padding: 5px;
+    width: 5%;
+    margin: 1%;
+    cursor: pointer;
+    border-radius: 10px;
+
+    .tooltip {
+
+      width: 120px;
+      background-color: white;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+
+      /* Position the tooltip text */
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+
+      /* Fade in tooltip */
+      opacity: 0;
+
+
+      /* Tooltip arrow */
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+      }
+    }
+
+    &:hover {
+      filter: invert(0);
+      background-color: white;
+      .tooltip {
+        color: black;
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+.ability-intro {
+  .info-block {
+    display: flex;
+  }
+}
+
+.abmod-table {
+
+  thead {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr {
+    border-bottom: black 1px solid;
+    border-top: black 1px solid;
+    &:nth-child(even) {
+      background-color: #ddd;
+    }
+    &:hover {
+      background-color: #444;
+      color: white;
+    }
+  }
+
+  border-left: black 1px solid;
+  border-right: black 1px solid;
+  border-collapse: collapse;
+  line-height: 1.75;
+  width: 600px;
+  text-align: center;
+}
