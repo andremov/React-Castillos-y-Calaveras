@@ -51,8 +51,15 @@ export var terms = {
         },
         points : {
             singular : "Hit Point",
-            plural : "Hit Points"
+            plural : "Hit Points",
+            max : "Max Hit Points"
         }
+    },
+    rest : {
+        short : "short rest",
+        long : "long rest",
+        name : "rest",
+        inf : "resting"
     },
     spell : {
         singular : "spell",
@@ -65,7 +72,21 @@ export var terms = {
     inspiration : "Inspiration",
     level : {
         singular : "level",
-        plural : "levels"
+        plural : "levels",
+        up : {
+            inf : {
+                singular: "subir un level",
+                plural: "subir unos levels"
+            },
+            person : {
+                singular: "sube un level",
+                plural: "subes unos levels"
+            }
+        }
+    },
+    crit : {
+        singular : "critical hit",
+        plural : "critical hits"
     },
     rolls : {
         singular : "roll",
@@ -106,7 +127,11 @@ export var terms = {
         },
         saving : {
             singular: "saving throw",
-            plural: "saving throws"
+            plural: "saving throws",
+            death : {
+                singular : "death saving throw",
+                plural : "death saving throws"
+            }
         },
         attack : {
             singular : "attack roll",

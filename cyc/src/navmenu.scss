@@ -27,7 +27,7 @@
     .dragon {
       display: none;
       width: 20%;
-      filter:invert(1);
+
     }
 
     &:hover {
@@ -35,7 +35,7 @@
     }
 
     &.active {
-      background-color: black;
+      filter: invert(1);
 
       .dragon {
         display: inline;
@@ -44,7 +44,6 @@
       .text {
         display: none;
       }
-
     }
   }
 }

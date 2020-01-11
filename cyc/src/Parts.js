@@ -1,6 +1,7 @@
 import {terms} from "./Terms";
 import React, {Fragment} from "react";
 import {titleCase} from "./Utilities";
+import {abilities} from "./Abilities";
 
 export function fancyAbilities() {
     return(
@@ -23,12 +24,12 @@ export function diceRolls(subtitle = true) {
                     <li> {titleCase(terms.rolls.saving.plural)} </li>
                     <li> {titleCase(terms.rolls.attack.plural)} </li>
                 </ul>
-                Estos se basan en {fancyAbilities()}.
+                Estos se basan en las seis {terms.ability.plural}.
                 <br /><br />
                 Los tres {terms.rolls.plural} funcionan de la siguiente forma:
                 <ol>
                     <li> Tirar un d20 </li>
-                    <li> Agregar un {terms.ability.modifier.long.singular} derivado de una de {fancyAbilities()} </li>
+                    <li> Agregar un {terms.ability.modifier.long.singular} derivado de una de las seis {terms.ability.plural} </li>
                     <li> Comparar el total con un número objetivo </li>
                 </ol>
             </div>
@@ -158,7 +159,7 @@ export function abilityChecks(subtitle = true) {
                 Cuando el resultado es incierto, los dados determinan los resultados.
                 <br/><br/>
                 Para cada {terms.rolls.ability.long.singular}, el {terms.gm} decide cuál
-                de {fancyAbilities()} es relevante para la tarea en cuestión
+                de las seis {terms.ability.plural} es relevante para la tarea en cuestión
                 y la dificultad de la tarea, representada por un {terms.dc.long.singular}.
                 <br /><br />
                 Cuanto más difícil es una tarea, mayor es su {terms.dc.short.singular}.
@@ -167,6 +168,28 @@ export function abilityChecks(subtitle = true) {
 
         </Fragment>
     )
+}
+
+export function abilityIntro(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.ability.plural)}
+            </div>
+
+            <div className={'description'}>
+                Las seis {terms.ability.plural} proporcionan una descripción rápida
+                de las características físicas y mentales de cada criatura.
+                <br /><br />
+                Cada tarea que un personaje o monstruo podría intentar
+                en el juego está cubierta por una de las seis {terms.ability.plural}.
+                <br /><br />
+                Esta sección explica con más detalle lo que significan
+                esas {terms.ability.plural} y las formas en que se usan en el juego.
+
+            </div>
+        </Fragment>
+    );
 }
 
 export function attackRolls(subtitle = true) {
@@ -212,60 +235,6 @@ export function savingThrows(subtitle = true) {
                 fallido también se detalla en el efecto que lo permite.
                 Por lo general, un exito significa que una criatura no sufre daño, o se reduce
                 el daño.
-            </div>
-        </Fragment>
-    )
-}
-
-export function inspirationIntro(subtitle = true) {
-    return(
-        <Fragment>
-            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
-                {terms.inspiration}
-            </div>
-
-            <div className={'description'}>
-                {terms.inspiration} es una regla que el {terms.gm} puede usar para recompensar
-                a un jugador por interpretar a su personaje de una manera fiel a sus rasgos de
-                personalidad, ideales, vínculos y fallas.
-            </div>
-        </Fragment>
-    )
-}
-
-export function inspirationGain(subtitle = true) {
-    return(
-        <Fragment>
-            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
-                Ganar {terms.inspiration}
-            </div>
-
-            <div className={'description'}>
-                El {terms.gm} puede elegir dar {terms.inspiration} por una variedad de razones.
-                Por lo general, los {terms.gm} lo otorgan cuando juegan de acuerdo a su
-                personalidad, cede ante los inconvenientes presentados por un defecto o
-                vínculo y, por consiguiente, retrata a su personaje de una manera convincente.
-                <br /><br />
-                La {terms.inspiration} se tiene o no se tiene, no se puede acumular, ademas se vence.
-            </div>
-        </Fragment>
-    )
-}
-
-export function inspirationUse(subtitle = true) {
-    return(
-        <Fragment>
-            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
-                Usar {terms.inspiration}
-            </div>
-
-            <div className={'description'}>
-                Si tiene {terms.inspiration}, se puede gastar con cualquier {terms.rolls.singular}.
-                Gastar {terms.inspiration} da {terms.bonus.advantage.singular}.
-                <br /><br />
-                Un jugador puede entregar su {terms.inspiration} a otro jugador por su
-                buen juego de rol, por su inteligencia o por hacer algo emocionante en
-                el juego, si el {terms.gm} lo permite.
             </div>
         </Fragment>
     )
@@ -332,5 +301,210 @@ function axis(name, description) {
                 {description}
             </div>
         </div>
+    )
+}
+
+export function level(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {titleCase(terms.level.plural)}
+            </div>
+
+            <div className={'description'}>
+                A medida que un personaje avanza en aventuras y supera desafíos,
+                este realizará impresionantes hazañas y vencerá enemigos formidables.
+                Al hacer esto, un personaje puede {terms.level.up.inf.singular}.
+                <br /><br />
+                Cuando un personaje {terms.level.up.person.singular}, su clase a menudo otorga
+                características adicionales, como se detalla en la descripción
+                de la clase.
+                <br /><br />
+                Ademas, cada cuatro {terms.level.plural}, puede aumentar
+                sus {terms.ability.score.long.plural}, ya sea aumentando
+                dos {terms.ability.score.short.plural} en 1 cada
+                uno o aumentando un {terms.ability.score.short.singular} en 2.
+                No puede aumentar un {terms.ability.score.long.singular} por encima de 20.
+                <br /><br />
+                Cada vez que {terms.level.up.person.singular}, ganas 1 {terms.hit.die.singular} adicional.
+            </div>
+        </Fragment>
+    )
+}
+
+export function hitDice(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {terms.hit.die.plural}
+            </div>
+
+            <div className={'description'}>
+                Un personaje puede gastar uno o más {terms.hit.die.plural} al final de un {terms.rest.short},
+                hasta el número de {terms.hit.die.plural} que tenga restantes. El numero maximo
+                de {terms.hit.die.plural} de un personaje es igual al {terms.level.singular} del personaje.
+                <br /><br />
+                Por cada {terms.hit.die.singular} gastado de esta manera,
+                el jugador tira el {terms.hit.die.singular} y le agrega
+                el {terms.ability.modifier.short.singular} de {abilities[3].name} del personaje.
+                El personaje recupera {terms.hit.points.plural} igual al total.
+                <br /><br />
+                Un personaje recupera algunos {terms.hit.die.plural} gastados al terminar
+                un {terms.rest.long}.
+                <br /><br />
+                Cada vez que {terms.level.up.person.singular},
+                incrementa su numero maximo de {terms.hit.die.singular} por 1.
+            </div>
+        </Fragment>
+    )
+}
+
+export function maxHitPoints(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {terms.hit.points.max}
+            </div>
+
+            <div className={'description'}>
+                Unos personajes son mas fuertes que otros, y pueden soportar
+                una mayor cantidad de daño que otros. Esto se ve reflejado
+                en los {terms.hit.points.max}.
+                <br /><br />
+                Tus {terms.hit.points.plural} actuales no sobrepasan tus {terms.hit.points.max}.
+            </div>
+            {gainMaxHP()}
+        </Fragment>
+    )
+}
+
+function gainMaxHP(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Aumentar los {terms.hit.points.max}
+            </div>
+
+            <div className={'description'}>
+                Al {terms.level.up.inf.singular}, tira un {terms.hit.die.singular},
+                agrega tu {terms.ability.modifier.short.singular} de {abilities[2].name} al {terms.rolls.singular} y
+                agrega el total a tus {terms.hit.points.max}.
+                <br /><br />
+                Ademas, cuando tu {terms.ability.modifier.short.singular} de {abilities[2].name} aumenta en 1,
+                tus {terms.hit.points.max} aumenta en 1 por cada nivel que hayas alcanzado.
+            </div>
+        </Fragment>
+    )
+}
+
+export function hitPoints(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                {terms.hit.points.plural}
+            </div>
+
+            <div className={'description'}>
+                Los {terms.hit.points.plural} representan una combinación de durabilidad física y mental,
+                la voluntad de vivir y la suerte. Las criaturas con más puntos de vida son más
+                difíciles de matar. Aquellos con menos puntos de vida son más frágiles.
+                <br /><br />
+                Los {terms.hit.points.plural} actuales de una criatura (generalmente llamados {terms.hit.points.plural})
+                puede ser cualquier número desde los {terms.hit.points.max} hasta 0.
+                Este número cambia con frecuencia a medida que recibe daño o curación.
+                <br /><br />
+                Cada vez que una criatura recibe daño, ese daño se resta de sus {terms.hit.points.plural}. La
+                pérdida de {terms.hit.points.plural} no tiene efecto en las capacidades de una criatura hasta
+                que la criatura caiga a 0 {terms.hit.points.plural}.
+            </div>
+        </Fragment>
+    )
+}
+
+export function noHitPoints(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Caer a 0 {terms.hit.points.plural}
+            </div>
+
+            <div className={'description'}>
+                Cuando cae a 0 {terms.hit.points.plural},
+                muere directamente o queda inconsciente.
+            </div>
+        </Fragment>
+    )
+}
+
+export function knockedOut(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Inconsciencia Inestable
+            </div>
+
+            <div className={'description'}>
+                Si el daño te reduce a 0 {terms.hit.points.plural} y no te mata,
+                caes inconsciente. Esta inconsciencia
+                termina si recuperas cualquier {terms.hit.points.singular}.
+            </div>
+        </Fragment>
+    )
+}
+
+export function death(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Muerte Directa
+            </div>
+
+            <div className={'description'}>
+                El daño masivo puede matar al instante.
+                Cuando un daño te reduce a 0 {terms.hit.points.plural} y queda daño restante,
+                mueres si el daño restante es igual o superior a tu {terms.hit.points.max}.
+            </div>
+        </Fragment>
+    )
+}
+
+export function stableDeath(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Estabilización
+            </div>
+
+            <div className={'description'}>
+                Siempre que comiences tu turno con 0 {terms.hit.points.plural}, debes hacer
+                un {terms.rolls.saving.singular} especial, llamado {terms.rolls.saving.death.singular},
+                para determinar si te acercas más a la muerte o te aferras a la vida.
+                <br /><br />
+                A diferencia de otros {terms.rolls.saving.plural}, este no está vinculado a
+                ningún {terms.ability.score.long.singular}.
+
+                <ul>
+                    <li> Si el {terms.rolls.saving.death.singular} es 10 o más, es un éxito. De lo contrario, una falla.
+                    </li>
+                    <li> Si sacas un 1, cuenta como dos fallas.
+                    </li>
+                    <li> Si sacas un 20, recuperas 1 {terms.hit.points.singular}.
+                    </li>
+                    <li> Si recibe algún daño en este estado, sufre una falla.
+                    </li>
+                    <li> Si el daño es un {terms.crit.singular}, sufre dos fallas.
+                    </li>
+                    <li> Si el daño es igual o superior a sus {terms.hit.points.max}, muere.
+                    </li>
+                </ul>
+
+                En tu tercer éxito, te vuelves estable.<br />
+                En tu tercer fracaso, mueres.<br />
+                <br />
+                Los éxitos o fracasos no necesitan ser consecutivos. El número de ambos se restablece a cero
+                cuando recupera cualquier punto de vida o se estabiliza.
+                <br /><br />
+            </div>
+        </Fragment>
     )
 }

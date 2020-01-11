@@ -1,9 +1,17 @@
 import {terms} from "./Terms";
+import str from './assets/str.svg';
+import dex from './assets/dex.svg';
+import con from './assets/con.svg';
+import wis from './assets/wis.svg';
+import int from './assets/int.svg';
+import cha from './assets/cha.svg';
 
 export var abilities = [
     {
         name : "Fuerza",
         code : "STR",
+        url : "/abilities/str",
+        icon : str,
         description_short : "Mide poder fisico.",
         description_long : "La fuerza mide el poder corporal, el entrenamiento atlético y " +
             "la medida en que puede ejercer fuerza física bruta.",
@@ -25,6 +33,8 @@ export var abilities = [
     {
         name : "Destreza",
         code : "DEX",
+        url : "/abilities/dex",
+        icon : dex,
         description_short : "Mide la agilidad.",
         description_long : "La destreza mide la agilidad, los reflejos y el equilibrio.",
         description_checks : "Un " + terms.rolls.ability.dex.singular + " puede modelar cualquier intento de " +
@@ -46,6 +56,8 @@ export var abilities = [
     {
         name : "Complexión",
         code : "CON",
+        url : "/abilities/con",
+        icon : con,
         description_short : "Mide la resistencia.",
         description_long : "La complexión mide la salud, la resistencia y la fuerza vital.",
         description_checks : "Los " + terms.rolls.ability.con.singular + " son poco comunes, y no se aplican" +
@@ -66,6 +78,8 @@ export var abilities = [
     {
         name : "Inteligencia",
         code : "INT",
+        url : "/abilities/int",
+        icon : int,
         description_short : "Mide el razonamiento y la memoria.",
         description_long : "La inteligencia mide la agudeza mental, la precisión de los recuerdos" +
             " y la capacidad de razonar.",
@@ -90,6 +104,8 @@ export var abilities = [
     {
         name : "Sabiduría",
         code : "WIS",
+        url : "/abilities/wis",
+        icon : wis,
         description_short : "Mide la percepción y perspicacia.",
         description_long : "La sabiduría refleja cuán sintonizado estás con el mundo que " +
             "te rodea y representa la percepción y la intuición.",
@@ -111,6 +127,8 @@ export var abilities = [
     {
         name : "Carisma",
         code : "CHA",
+        url : "/abilities/cha",
+        icon : cha,
         description_short : "Mide la fuerza de personalidad.",
         description_long : "La carisma mide tu habilidad para interactuar efectivamente con " +
             "otros. Incluye factores como la confianza y la elocuencia, y puede representar" +

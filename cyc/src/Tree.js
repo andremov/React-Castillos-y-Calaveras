@@ -7,6 +7,8 @@ import {InspirationComponent} from "./Components/InspirationComponent";
 import React from "react";
 import {terms} from "./Terms";
 import {titleCase} from "./Utilities";
+import {HitPointComponent} from "./Components/HitPointComponent";
+import {RestComponent} from "./Components/RestComponent";
 
 export var tree = [
     {
@@ -26,6 +28,18 @@ export var tree = [
         comp : <GMComponent />,
         title : terms.gm,
         hidden : true
+    },
+    {
+        path: "/hitpoints",
+        comp : <HitPointComponent />,
+        title : terms.hit.points.plural,
+        hidden : false
+    },
+    {
+        path: "/rest",
+        comp : <RestComponent />,
+        title : titleCase(terms.rest.inf),
+        hidden : false
     },
     {
         path: "/level",

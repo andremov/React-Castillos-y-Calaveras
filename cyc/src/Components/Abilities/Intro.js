@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {AbilityModsTable} from "../AbilityModsTable";
 import {terms} from "../../Terms";
-import {abilityChecks, fancyAbilities} from "../../Parts";
+import {abilityChecks, abilityIntro, fancyAbilities, level} from "../../Parts";
 import {titleCase} from "../../Utilities";
 
 export class Intro extends Component {
@@ -10,34 +10,11 @@ export class Intro extends Component {
         return (
             <div className={'ability-intro'}>
 
-                <div className={'header1 serif bold'}>
-                    {titleCase(terms.ability.plural)}
-                </div>
-
-                {this.introduction()}
+                {abilityIntro(false)}
                 {this.modifierSection()}
                 {abilityChecks()}
-
+                {level()}
             </div>
-        );
-    }
-
-    introduction() {
-        return(
-            <Fragment>
-                <div className={'info-block'}>
-                    <span className={'description'}>
-                        {fancyAbilities()} proporcionan una descripción rápida
-                        de las características físicas y mentales de cada criatura.
-                        <br /><br />
-                        Cada tarea que un personaje o monstruo podría intentar
-                        en el juego está cubierta por una de {fancyAbilities()}.
-                        <br /><br />
-                        Esta sección explica con más detalle lo que significan
-                        esas {terms.ability.plural} y las formas en que se usan en el juego.
-                    </span>
-                </div>
-            </Fragment>
         );
     }
 

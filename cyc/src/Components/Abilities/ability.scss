@@ -82,6 +82,11 @@
       }
     }
 
+    &.active {
+      filter: invert(0);
+      background-color: white;
+    }
+
   }
 }
 
