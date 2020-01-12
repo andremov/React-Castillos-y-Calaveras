@@ -1,29 +1,74 @@
 
-.ability {
-  font-size: 1.25rem;
-  width: 95%;
+.arrow-btn {
+  color: white;
+  margin: 1%;
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
 
-  .header {
-    display: flex;
-    margin-bottom: 3%;
+  filter: invert(0);
+  transition: 0.2s;
 
-    .name {
-      flex-grow: 0.9;
-      font-size: 3.5rem;
-      width: 50%;
-      line-height: 1;
-    }
+  &:hover {
+    filter: invert(0.75);
+  }
 
-    .code {
-      width: 75px;
-      text-align: center;
-      padding: 15px;
-      font-weight: bold;
-      font-size: 2rem;
-      background-color: black;
-      color: white;
-      border-radius: 5px;
-    }
+  &.border-left {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  &.border-right {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .arrow-btn-body {
+    background-color: black;
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  .arrow-btn-tail {
+    transform: translate(-1px,0);
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(0 0, 10% 0, 100% 50%, 10% 100%, 0 100% );
+  }
+
+  .arrow-btn-head {
+    transform: translate(1px,0);
+    width: 20px;
+    background-color: black;
+    clip-path: polygon(100% 0, 90% 0, 0% 50%, 90% 100%, 100% 100% );
+  }
+}
+
+.more-info-btn {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: black;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.ability-header {
+  display: flex;
+
+  .name {
+    flex-grow: 0.9;
+  }
+
+  .code {
+    width: 2em;
+    height: 1.1em;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.75em;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
   }
 }
 
@@ -90,10 +135,8 @@
   }
 }
 
-.ability-intro {
-  .info-block {
-    display: flex;
-  }
+.ability-info {
+  display: flex;
 }
 
 .abmod-table {

@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import {terms} from "../Terms";
+import {terms} from "../Data/Terms";
 import {titleCase} from "../Utilities";
 import {hitDice} from "../Parts";
+import {ArrowBtn} from "./ArrowBtn";
 
 export class RestComponent extends Component {
     render() {
@@ -12,6 +13,7 @@ export class RestComponent extends Component {
                     {this.short()}
                     {this.long()}
                     {hitDice()}
+                    <ArrowBtn url={'/hitpoints'} back={false} text={titleCase(terms.hit.points.plural)}/>
                 </div>
             </div>
         );
@@ -77,8 +79,7 @@ export class RestComponent extends Component {
                     <br /><br />
                     Un personaje no puede beneficiarse de más de un {terms.rest.long} en un período de
                     24 horas, y un personaje debe tener al menos 1 {terms.hit.points.singular} al comienzo
-                    del {terms.rest.name}
-                    para obtener sus beneficios.
+                    del {terms.rest.name} para obtener sus beneficios.
                 </div>
             </Fragment>
         )

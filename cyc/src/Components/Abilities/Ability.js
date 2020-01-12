@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
-import {abilities} from '../../Abilities';
-import {terms} from '../../Terms';
+import React, {Component, Fragment} from 'react';
+import {abilities} from '../../Data/Abilities';
+import {terms} from '../../Data/Terms';
 import {titleCase} from '../../Utilities';
+import {ArrowBtn} from "../ArrowBtn";
 
 export class Ability extends Component {
 
@@ -40,60 +41,46 @@ export class Ability extends Component {
     correctHTML(data, id) {
 
         return(
-            <div className={'ability'}>
+            <Fragment>
 
-                <div className={'header'}>
-                    <div className={'name serif bold'}>
+                <div className={'ability-header'}>
+                    <div className={'header1 name serif bold'}>
                         {data.name}
                     </div>
 
-                    <div className={'code sans'}>
+                    <div className={'code'}>
                         {data.code}
                     </div>
                 </div>
 
-                <div className={'description sans'}>
+                <div className={'description'}>
                     {data.description_long}
                 </div>
 
-                <div>
-
-                    <div className={'header2 serif'}>
-                        {titleCase(terms.skill.plural)}
-                    </div>
-
-                    <ul>
-                        {
-                        data.skills.map(item =>
-                            <li key={data.skills.indexOf(item)} className={'item sans'}>
-                                {item}
-                            </li>
-                        )
-                        }
-                    </ul>
+                <div className={'header2 bold serif'}>
+                    {titleCase(terms.skill.plural)}
                 </div>
 
-                <div>
-                    <div className={'header2 serif'}>
-                        {titleCase(
-                            (id === 0 ?
-                            terms.rolls.ability.str.plural :
-                                id === 1 ?
-                                terms.rolls.ability.dex.plural :
-                                    id === 2 ?
-                                    terms.rolls.ability.con.plural :
-                                        id === 3 ?
-                                        terms.rolls.ability.int.plural :
-                                            id === 4?
-                                            terms.rolls.ability.wis.plural :
-                                            terms.rolls.ability.cha.plural
-                            )
-                        )}
-                    </div>
+                <ul>
+                    {
+                    data.skills.map(item =>
+                        <li key={data.skills.indexOf(item)} className={'item sans'}>
+                            {item}
+                        </li>
+                    )
+                    }
+                </ul>
 
-                    <div className={'description sans'}>
-                        {data.description_checks}
-                    </div>
+                <div className={'header2 bold serif'}>
+                    {titleCase(
+                        terms.rolls.ability.short.plural
+                        +" de "+
+                        data.name
+                    )}
+                </div>
+
+                <div className={'description'}>
+                    {data.description_checks}
 
                     <ul>
                         {
@@ -105,7 +92,9 @@ export class Ability extends Component {
                         }
                     </ul>
                 </div>
-            </div>
+
+                <ArrowBtn url={'/rolls/check'} back={false} text={titleCase(terms.rolls.ability.long.plural)}/>
+            </Fragment>
 
         );
     }

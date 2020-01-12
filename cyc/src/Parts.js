@@ -1,13 +1,7 @@
-import {terms} from "./Terms";
+import {terms} from "./Data/Terms";
 import React, {Fragment} from "react";
 import {titleCase} from "./Utilities";
-import {abilities} from "./Abilities";
-
-export function fancyAbilities() {
-    return(
-        <span className={'serif'}>{terms.ability.title}</span>
-    )
-}
+import {abilities} from "./Data/Abilities";
 
 export function diceRolls(subtitle = true) {
     return (
@@ -371,7 +365,7 @@ export function maxHitPoints(subtitle = true) {
                 una mayor cantidad de daño que otros. Esto se ve reflejado
                 en los {terms.hit.points.max}.
                 <br /><br />
-                Tus {terms.hit.points.plural} actuales no sobrepasan tus {terms.hit.points.max}.
+                Los {terms.hit.points.plural} actuales no sobrepasan los {terms.hit.points.max}.
             </div>
             {gainMaxHP()}
         </Fragment>
@@ -386,12 +380,12 @@ function gainMaxHP(subtitle = true) {
             </div>
 
             <div className={'description'}>
-                Al {terms.level.up.inf.singular}, tira un {terms.hit.die.singular},
-                agrega tu {terms.ability.modifier.short.singular} de {abilities[2].name} al {terms.rolls.singular} y
-                agrega el total a tus {terms.hit.points.max}.
+                Al {terms.level.up.inf.singular}, tire un {terms.hit.die.singular},
+                agregue su {terms.ability.modifier.short.singular} de {abilities[2].name} al {terms.rolls.singular} y
+                agregue el total a sus {terms.hit.points.max}.
                 <br /><br />
-                Ademas, cuando tu {terms.ability.modifier.short.singular} de {abilities[2].name} aumenta en 1,
-                tus {terms.hit.points.max} aumenta en 1 por cada nivel que hayas alcanzado.
+                Ademas, cuando su {terms.ability.modifier.short.singular} de {abilities[2].name} aumenta en 1,
+                sus {terms.hit.points.max} aumentan en 1 por cada nivel que ha alcanzado.
             </div>
         </Fragment>
     )
@@ -433,7 +427,7 @@ export function healing(subtitle = true) {
                 <br />
                 Incluso la muerte es reversible a través de poderosa magia.
                 <br />
-                El descanso puede restaurar los {terms.hit.points.plural} de una criatura,
+                El {terms.rest.name} puede restaurar los {terms.hit.points.plural} de una criatura,
                 y {terms.spell.plural} o {terms.item.plural} pueden eliminar el daño en un instante.
                 <br /><br />
                 Cuando una criatura recibe curación de cualquier tipo,
@@ -472,9 +466,9 @@ export function knockedOut(subtitle = true) {
             </div>
 
             <div className={'description'}>
-                Si el daño te reduce a 0 {terms.hit.points.plural} y no te mata,
-                caes inconsciente. Esta inconsciencia
-                termina si recuperas cualquier {terms.hit.points.singular}.
+                Si el daño lo reduce a 0 {terms.hit.points.plural} y no lo mata,
+                cae inconsciente. Esta inconsciencia
+                termina si recupera cualquier {terms.hit.points.singular}.
             </div>
         </Fragment>
     )
@@ -490,7 +484,7 @@ export function death(subtitle = true) {
             <div className={'description'}>
                 El daño masivo puede matar al instante.
                 Cuando un daño te reduce a 0 {terms.hit.points.plural} y queda daño restante,
-                mueres si el daño restante es igual o superior a tu {terms.hit.points.max}.
+                muere si el daño restante es igual o superior a su {terms.hit.points.max}.
             </div>
         </Fragment>
     )
@@ -504,9 +498,9 @@ export function stableDeath(subtitle = true) {
             </div>
 
             <div className={'description'}>
-                Siempre que comiences tu turno con 0 {terms.hit.points.plural}, debes hacer
+                Siempre que comience un turno con 0 {terms.hit.points.plural}, debe hacer
                 un {terms.rolls.saving.singular} especial, llamado {terms.rolls.saving.death.singular},
-                para determinar si te acercas más a la muerte o te aferras a la vida.
+                para determinar si se acerca más a la muerte o se aferras a la vida.
                 <br /><br />
                 A diferencia de otros {terms.rolls.saving.plural}, este no está vinculado a
                 ningún {terms.ability.score.long.singular}.
@@ -514,9 +508,9 @@ export function stableDeath(subtitle = true) {
                 <ul>
                     <li> Si el {terms.rolls.saving.death.singular} es 10 o más, es un éxito. De lo contrario, una falla.
                     </li>
-                    <li> Si sacas un 1, cuenta como dos fallas.
+                    <li> Si saca un 1, cuenta como dos fallas.
                     </li>
-                    <li> Si sacas un 20, recuperas 1 {terms.hit.points.singular}.
+                    <li> Si saca un 20, recuperas 1 {terms.hit.points.singular}.
                     </li>
                     <li> Si recibe algún daño en este estado, sufre una falla.
                     </li>
@@ -526,8 +520,8 @@ export function stableDeath(subtitle = true) {
                     </li>
                 </ul>
 
-                En tu tercer éxito, te vuelves estable.<br />
-                En tu tercer fracaso, mueres.<br />
+                En su tercer éxito, se vuelvs estable.<br />
+                En su tercer fracaso, muere.<br />
                 <br />
                 Los éxitos o fracasos no necesitan ser consecutivos. El número de ambos se restablece a cero
                 cuando recupera cualquier punto de vida o se estabiliza.

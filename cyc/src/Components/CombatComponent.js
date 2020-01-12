@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from 'react';
-import {terms} from "../Terms";
+import {terms} from "../Data/Terms";
 import {titleCase} from "../Utilities";
-import {abilities} from "../Abilities";
+import {abilities} from "../Data/Abilities";
 import {attackRolls, healing} from "../Parts";
+import {ArrowBtn} from "./ArrowBtn";
 
 
 export class CombatComponent extends Component {
@@ -14,13 +15,20 @@ export class CombatComponent extends Component {
                     {this.combatIntro()}
                     {this.surprise()}
                     {this.initiative()}
+                    <ArrowBtn back={false} url={'/rolls/check'} text={titleCase(terms.rolls.ability.long.singular)} />
+                    <ArrowBtn url={'/abilities'} back={false} text={titleCase(terms.ability.plural)}/>
                     {this.actions()}
                     {attackRolls()}
+                    <ArrowBtn url={'/rolls/attack'} back={false} text={titleCase(terms.rolls.attack.plural)}/>
                     {this.damage()}
+                    <ArrowBtn url={'/abilities'} back={false} text={titleCase(terms.ability.plural)}/>
                     {healing()}
+                    <ArrowBtn url={'/rest'} back={false} text={titleCase(terms.rest.inf)}/>
+                    <ArrowBtn url={'/hitpoints'} back={false} text={titleCase(terms.hit.points.plural)}/>
                     {this.crit()}
+                    <ArrowBtn url={'/rolls/attack'} back={false} text={titleCase(terms.rolls.attack.plural)}/>
                     {this.cover()}
-
+                    <ArrowBtn url={'/rolls/saving'} back={false} text={titleCase(terms.rolls.saving.plural)}/>
                 </div>
             </div>
         );
@@ -58,7 +66,7 @@ export class CombatComponent extends Component {
                     En ciertas situaciones, un lado de la batalla toma por sorpresa al otro.
                     Si ninguna de las partes intenta ser sigilosa, usualmente se notan automáticamente.
                     <br /><br />
-                    Si estás sorprendido, no puedes moverte ni realizar una acción en tu primer turno del combate.
+                    Una criatura sorprendida, no se puede mover ni realizar una acción en su primer turno del combate.
                     Un miembro de un grupo puede sorprenderse incluso si los otros miembros no lo están.
                 </div>
             </Fragment>
@@ -84,7 +92,7 @@ export class CombatComponent extends Component {
                         Resolviendo Empates
                     </div>
                     Si se produce un empate entre criaturas controladas por el {terms.gm},
-                    el {terms.gm} decide decidir el orden.
+                    el {terms.gm} decide el orden.
                     <br />
                     Si se produce un empate entre jugadores, los jugadores deciden entre ellos.
                     <br />
@@ -127,40 +135,40 @@ export class CombatComponent extends Component {
                     <div className={'header3 serif bold'}>
                         Defender
                     </div>
-                    Al defender, te enfocas completamente en evitar los ataques.
+                    Al defender, se enfoca completamente en evitar ataques.
                     <br />
-                    Hasta el comienzo de tu próximo turno, cualquier {terms.rolls.attack.singular} contra ti
+                    Hasta el comienzo de su próximo turno, cualquier {terms.rolls.attack.singular} recibido
                     tiene {terms.bonus.disadvantage.singular} si puedes ver al atacante, y
-                    haces un {terms.rolls.saving.singular} de {abilities[1].name} con {terms.bonus.advantage.singular}.
+                    hace un {terms.rolls.saving.singular} de {abilities[1].name} con {terms.bonus.advantage.singular}.
 
 
                     <div className={'header3 serif bold'}>
                         Ayudar
                     </div>
-                    Puedes prestar tu ayuda a otra criatura a completar una tarea.
+                    Puede prestar su ayuda a otra criatura a completar una tarea.
                     <br />
-                    Cuando realizas
-                    la acción de Ayuda, la criatura que ayudas gana {terms.bonus.advantage.singular} en
+                    Cuando realiza
+                    la acción de ayuda, la criatura que recibe la ayuda gana {terms.bonus.advantage.singular} en
                     el próximo {terms.rolls.ability.long.singular} que
-                    realice para realizar la tarea con la que estás ayudando, siempre
-                    que haga el {terms.rolls.ability.short.singular} antes del comienzo de tu próximo turno.
+                    realice para realizar esa tarea, siempre
+                    que haga el {terms.rolls.ability.short.singular} antes del comienzo de su próximo turno.
 
 
                     <div className={'header3 serif bold'}>
                         Preparar
                     </div>
-                    A veces quieres esperar una circunstancia particular
+                    A veces quiere esperar una circunstancia particular
                     antes de actuar.
                     <br />
-                    Para hacerlo, puedes prepararte en tu turno.
-                    Primero, usted decide qué circunstancia perceptible desencadenará su acción.
-                    Luego, eliges la acción que tomarás en respuesta a esto.
+                    Para hacerlo, puede prepararse en tu turno.
+                    Primero, se decide la circunstancia perceptible que desencadenará su acción.
+                    Luego, se elige la acción a tomar en respuesta.
                     <br /><br />
                     Cuando se produce la circunstancia, puede realizar su acción justo después de que
                     suceda o ignorarlo.
                     <br /><br />
-                    Si preparas un hechizo, debe mantener la
-                    magia del hechizo. Si tu concentración se rompe, el
+                    Si prepara un hechizo, debe mantener la
+                    magia del hechizo. Si su concentración se rompe, el
                     hechizo se disipa sin tener efecto.
 
 
@@ -169,7 +177,7 @@ export class CombatComponent extends Component {
                     </div>
                     Cuando realiza la acción de búsqueda, dedica su atención a encontrar algo.
                     <br/>
-                    Dependiendo de la naturaleza de su búsqueda, el {terms.gm} podría hacer que haga
+                    Dependiendo de la naturaleza de su búsqueda, el {terms.gm} podría requerir
                     un {terms.rolls.ability.long.singular}. Al hacer esto,
                     está en {terms.bonus.disadvantage.singular} a cualquier ataque.
 
@@ -178,10 +186,10 @@ export class CombatComponent extends Component {
                         Usar un objeto
                     </div>
                     Cuando un objeto requiere su acción
-                    para su uso, realiza la acción Usar un objeto.
+                    para su uso, realiza la acción usar un objeto.
                     <br/>
                     Esta acción también es útil cuando
-                    quieres interactuar con más de un objeto en tu turno.
+                    quiera interactuar con más de un objeto en su turno.
                 </div>
             </Fragment>
         )
@@ -197,7 +205,7 @@ export class CombatComponent extends Component {
                 <div className={'description'}>
                     Si el {terms.rolls.attack.singular} fue un 20, el ataque es un {terms.crit.singular}.
 
-                    Cuando obtienes un {terms.rolls.attack.singular}, tira todos los dados de daño dos veces y súmalos.
+                    Cuando obtiene un {terms.rolls.attack.singular}, tire todos los dados de daño dos veces y súmalos.
                     Luego agregue los {terms.ability.modifier.short.plural} relevantes de la forma habitual.
 
                 </div>
@@ -214,17 +222,17 @@ export class CombatComponent extends Component {
 
                 <div className={'description'}>
                     Cada arma, hechizo y habilidad de monstruo dañino especifica el daño que causa.
-                    Tira los dados involucrados con el ataque, agrega {terms.ability.modifier.short.plural} y
+                    Tire los dados involucrados con el ataque, agregue {terms.ability.modifier.short.plural} y
                     aplica el daño a su objetivo.
                     <br/><br/>
                     Muchos factores pueden otorgar una
                     bonificación o penalización al daño, es posible inflingir 0 daño, pero nunca
                     daño negativo.
                     <br/><br/>
-                    Cuando atacas con un arma, agregas tu {terms.ability.modifier.long.singular},
+                    Cuando ataca con un arma, agrega su {terms.ability.modifier.long.singular},
                     el mismo {terms.ability.modifier.short.singular} utilizado
                     para el {terms.rolls.attack.singular}, al daño.
-                    Un {terms.spell.singular} te dice qué dados tirar para
+                    Un {terms.spell.singular}  dice qué dados tirar para
                     el daño y si agregar algún {terms.ability.modifier.short.singular}.
                     <br/><br/>
                     Si un {terms.spell.singular} u otro efecto hace daño a más de un objetivo al mismo tiempo,

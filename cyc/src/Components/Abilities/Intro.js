@@ -1,20 +1,22 @@
 import React, {Component, Fragment} from 'react';
 import {AbilityModsTable} from "../AbilityModsTable";
-import {terms} from "../../Terms";
-import {abilityChecks, abilityIntro, fancyAbilities, level} from "../../Parts";
+import {terms} from "../../Data/Terms";
+import {abilityChecks, abilityIntro, level} from "../../Parts";
 import {titleCase} from "../../Utilities";
+import {ArrowBtn} from "../ArrowBtn";
 
 export class Intro extends Component {
 
     render() {
         return (
-            <div className={'ability-intro'}>
-
+            <Fragment>
                 {abilityIntro(false)}
                 {this.modifierSection()}
                 {abilityChecks()}
+                <ArrowBtn url={'/rolls/check'} back={false} text={titleCase(terms.rolls.ability.long.plural)}/>
                 {level()}
-            </div>
+                <ArrowBtn url={'/level'} back={false} text={titleCase(terms.level.plural)}/>
+            </Fragment>
         );
     }
 
@@ -22,7 +24,7 @@ export class Intro extends Component {
         return(
             <Fragment>
 
-                <div className={'info-block'}>
+                <div className={'ability-info'}>
                     <div>
                         {this.modifiers()}
                         {this.skills()}
@@ -81,10 +83,8 @@ export class Intro extends Component {
                     incluidas las {terms.skill.plural} en las que un personaje o
                     un monstruo pueden ser competentes. Una {terms.skill.singular} representa
                     un aspecto específico de un {terms.ability.score.long.singular},
-                    y la habilidad de un individuo en una {terms.skill.plural}
-                    demuestra un enfoque en ese aspecto.
-                    <br /><br />
-                    (Las habilidades iniciales de un personaje se determinan en la creación del personaje).
+                    y la habilidad de un individuo en
+                    una {terms.skill.plural} demuestra un enfoque en ese aspecto.
                 </div>
 
             </Fragment>

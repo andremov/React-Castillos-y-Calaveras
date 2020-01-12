@@ -1,5 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {abilityChecks, attackRolls, contests, groupChecks, passive, savingThrows} from "../../Parts";
+import {titleCase} from "../../Utilities";
+import {terms} from "../../Data/Terms";
+import {ArrowBtn} from "../ArrowBtn";
 
 export class Roll extends Component {
 
@@ -35,6 +38,7 @@ export class Roll extends Component {
                             this.savingRender() :
                             this.attackRender()
                 }
+                <ArrowBtn url={'/rolls'} back={true} text={titleCase(terms.rolls.plural)}/>
             </Fragment>
         );
     }
@@ -43,6 +47,7 @@ export class Roll extends Component {
         return(
             <Fragment>
                 {abilityChecks(false)}
+                <ArrowBtn url={'/abilities'} back={false} text={titleCase(terms.ability.plural)}/>
                 {contests()}
                 {groupChecks()}
                 {passive()}
@@ -54,6 +59,7 @@ export class Roll extends Component {
         return(
             <Fragment>
                 {attackRolls(false)}
+                <ArrowBtn url={'/combat'} back={false} text={titleCase(terms.combat.name)}/>
             </Fragment>
         )
     }

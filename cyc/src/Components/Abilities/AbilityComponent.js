@@ -1,10 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {Ability} from "./Ability";
 import {Intro} from "./Intro";
-import './ability.scss';
 import {NavLink, Route, Switch} from "react-router-dom";
-import about from '../../assets/about.svg';
-import {abilities} from "../../Abilities";
+import about from '../../Assets/about.svg';
+import {abilities} from "../../Data/Abilities";
 
 export class AbilityComponent extends Component {
 

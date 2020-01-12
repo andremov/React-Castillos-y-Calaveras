@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import {Route, BrowserRouter as Router, Switch, withRouter} from "react-router-dom";
-import '../trinkets.scss';
-import {terms} from "../Terms";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import '../Style/trinkets.scss';
+import {terms} from "../Data/Terms";
 import {titleCase} from "../Utilities";
 import {MainMenu} from "./MainMenu";
 import {tree} from "../Tree";

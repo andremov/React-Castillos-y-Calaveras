@@ -9,7 +9,6 @@ export var terms = {
     ability : {
         singular : "ability",
         plural : "abilities",
-        title : "Las Seis Abilities",
         score : {
             long : {
                 singular: "ability score",
@@ -178,3 +177,4 @@ export var terms = {
         }
     }
 };
+

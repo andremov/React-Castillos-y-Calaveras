@@ -5,7 +5,7 @@ import {LevelComponent} from "./Components/LevelComponent";
 import {AlignmentComponent} from "./Components/AlignmentComponent";
 import {InspirationComponent} from "./Components/InspirationComponent";
 import React from "react";
-import {terms} from "./Terms";
+import {terms} from "./Data/Terms";
 import {titleCase} from "./Utilities";
 import {HitPointComponent} from "./Components/HitPointComponent";
 import {RestComponent} from "./Components/RestComponent";
@@ -13,15 +13,21 @@ import {CombatComponent} from "./Components/CombatComponent";
 
 export var tree = [
     {
-        path : "/abilities",
-        comp : <AbilityComponent />,
-        title : titleCase(terms.ability.plural),
+        path: "/gm",
+        comp : <GMComponent />,
+        title : terms.gm,
+        hidden : true
+    },
+    {
+        path: "/level",
+        comp : <LevelComponent />,
+        title : titleCase(terms.level.plural),
         hidden : false
     },
     {
-        path: "/combat",
-        comp : <CombatComponent />,
-        title : titleCase(terms.combat.name),
+        path : "/abilities",
+        comp : <AbilityComponent />,
+        title : titleCase(terms.ability.plural),
         hidden : false
     },
     {
@@ -31,10 +37,10 @@ export var tree = [
         hidden : false
     },
     {
-        path: "/gm",
-        comp : <GMComponent />,
-        title : terms.gm,
-        hidden : true
+        path: "/combat",
+        comp : <CombatComponent />,
+        title : titleCase(terms.combat.name),
+        hidden : false
     },
     {
         path: "/hitpoints",
@@ -46,12 +52,6 @@ export var tree = [
         path: "/rest",
         comp : <RestComponent />,
         title : titleCase(terms.rest.inf),
-        hidden : false
-    },
-    {
-        path: "/level",
-        comp : <LevelComponent />,
-        title : titleCase(terms.level.plural),
         hidden : false
     },
     {

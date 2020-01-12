@@ -4,6 +4,7 @@
   display: flex;
   background-color: white;
   margin-bottom: 1%;
+  font-size: 2em;
   justify-content: space-evenly;
   align-items: center;
 
@@ -27,7 +28,6 @@
     .dragon {
       display: none;
       width: 20%;
-
     }
 
     &:hover {

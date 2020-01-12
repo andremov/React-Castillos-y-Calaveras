@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {diceRolls} from "../../Parts";
 import {ArrowBtn} from "../ArrowBtn";
 import {titleCase} from "../../Utilities";
-import {terms} from "../../Terms";
+import {terms} from "../../Data/Terms";
 
 export class Intro extends Component {
     render() {
@@ -11,7 +11,7 @@ export class Intro extends Component {
 
                 {diceRolls(false)}
 
-                <br />
+
 
                 <ArrowBtn back={false} url={'/rolls/check'} text={titleCase(terms.rolls.ability.long.singular)} />
                 <ArrowBtn back={false} url={'/rolls/saving'} text={titleCase(terms.rolls.saving.singular)} />

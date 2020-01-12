@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import {terms} from "../Terms";
+import {terms} from "../Data/Terms";
+import {ArrowBtn} from "./ArrowBtn";
+import {titleCase} from "../Utilities";
 
 export class InspirationComponent extends Component {
 
@@ -10,6 +12,7 @@ export class InspirationComponent extends Component {
                     {this.inspirationIntro()}
                     {this.inspirationGain()}
                     {this.inspirationUse()}
+                    <ArrowBtn url={'/rolls'} back={false} text={titleCase(terms.rolls.plural)}/>
                 </div>
             </div>
         );
