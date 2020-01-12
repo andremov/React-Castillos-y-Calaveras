@@ -15,7 +15,7 @@ export var abilities = [
         description_short : "Mide poder fisico.",
         description_long : "La fuerza mide el poder corporal, el entrenamiento atlético y " +
             "la medida en que puede ejercer fuerza física bruta.",
-        description_checks : "Un " + terms.rolls.ability.str.singular + " puede modelar cualquier intento de levantar, " +
+        description_checks : "Un " + terms.rolls.ability.short.singular + "de fuerza puede modelar cualquier intento de levantar, " +
             "empujar, tirar o romper algo, forzar su cuerpo a atravesar un espacio o aplicar fuerza " +
             "bruta a una situación.",
         checks : [
@@ -37,7 +37,7 @@ export var abilities = [
         icon : dex,
         description_short : "Mide la agilidad.",
         description_long : "La destreza mide la agilidad, los reflejos y el equilibrio.",
-        description_checks : "Un " + terms.rolls.ability.dex.singular + " puede modelar cualquier intento de " +
+        description_checks : "Un " + terms.rolls.ability.short.singular + "de destreza puede modelar cualquier intento de " +
             "moverse ágil, rápida o silenciosamente, o evitar caerse sobre una base difícil.",
         checks : [
             "Forzar una puerta atascada, bloqueada o enrejada",
@@ -60,7 +60,7 @@ export var abilities = [
         icon : con,
         description_short : "Mide la resistencia.",
         description_long : "La complexión mide la salud, la resistencia y la fuerza vital.",
-        description_checks : "Los " + terms.rolls.ability.con.singular + " son poco comunes, y no se aplican" +
+        description_checks : "Los " + terms.rolls.ability.short.singular + "de complexión son poco comunes, y no se aplican" +
             " habilidades a los controles de constitución, porque la resistencia que representa" +
             " esta habilidad es en gran medida pasiva en lugar de implicar un esfuerzo específico" +
             " por parte de un personaje o monstruo.",
@@ -83,7 +83,7 @@ export var abilities = [
         description_short : "Mide el razonamiento y la memoria.",
         description_long : "La inteligencia mide la agudeza mental, la precisión de los recuerdos" +
             " y la capacidad de razonar.",
-        description_checks : "Un " + terms.rolls.ability.int.singular + " entra en juego cuando se necesita recurrir " +
+        description_checks : "Un " + terms.rolls.ability.short.singular + "de inteligencia entra en juego cuando se necesita recurrir " +
             "a la lógica, la educación, la memoria o el razonamiento deductivo.",
         checks : [
             "Comunicarse con una criatura sin usar palabras.",
@@ -109,7 +109,7 @@ export var abilities = [
         description_short : "Mide la percepción y perspicacia.",
         description_long : "La sabiduría refleja cuán sintonizado estás con el mundo que " +
             "te rodea y representa la percepción y la intuición.",
-        description_checks : "Un " + terms.rolls.ability.wis.singular + " podría reflejar un esfuerzo por" +
+        description_checks : "Un " + terms.rolls.ability.short.singular + "de sabiduría podría reflejar un esfuerzo por" +
             " leer el lenguaje corporal, comprender los sentimientos de alguien, notar cosas " +
             "sobre el medio ambiente o cuidar a una persona lesionada.",
         checks : [
@@ -133,7 +133,7 @@ export var abilities = [
         description_long : "La carisma mide tu habilidad para interactuar efectivamente con " +
             "otros. Incluye factores como la confianza y la elocuencia, y puede representar" +
             " una personalidad encantadora o dominante.",
-        description_checks : "Puede surgir un " + terms.rolls.ability.cha.singular + " cuando intentas influir o " +
+        description_checks : "Puede surgir un " + terms.rolls.ability.short.singular + "de carisma cuando intentas influir o " +
             "entretener a otros, cuando tratas de causar una impresión o decir una mentira " +
             "convincente, o cuando estás navegando por una situación social difícil.",
         checks : [

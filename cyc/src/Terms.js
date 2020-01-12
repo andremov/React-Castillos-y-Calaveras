@@ -44,6 +44,15 @@ export var terms = {
         good : "Good",
         evil : "Evil"
     },
+    combat : {
+        name : "combat",
+        init : "Initiative",
+        surprise : "surprise"
+    },
+    item : {
+      singular : "item",
+      plural : "items"
+    },
     hit : {
         die : {
             singular: "Hit Die",
@@ -99,30 +108,6 @@ export var terms = {
             short: {
                 singular: "check",
                 plural: "checks"
-            },
-            str : {
-                singular: "strength check",
-                plural: "strength checks"
-            },
-            dex : {
-                singular: "dexterity check",
-                plural: "dexterity checks"
-            },
-            con : {
-                singular: "constitution check",
-                plural: "constitution checks"
-            },
-            int : {
-                singular: "intelligence check",
-                plural: "intelligence checks"
-            },
-            wis : {
-                singular: "wisdom check",
-                plural: "wisdom checks"
-            },
-            cha : {
-                singular: "charisma check",
-                plural: "charisma checks"
             }
         },
         saving : {
@@ -156,6 +141,10 @@ export var terms = {
         contest : {
             singular : "contest",
             plural : "contests"
+        },
+        damage : {
+            singular : "damage roll",
+            plural : "damage rolls"
         }
     },
     dc : {

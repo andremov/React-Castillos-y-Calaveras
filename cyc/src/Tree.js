@@ -9,12 +9,19 @@ import {terms} from "./Terms";
 import {titleCase} from "./Utilities";
 import {HitPointComponent} from "./Components/HitPointComponent";
 import {RestComponent} from "./Components/RestComponent";
+import {CombatComponent} from "./Components/CombatComponent";
 
 export var tree = [
     {
         path : "/abilities",
         comp : <AbilityComponent />,
         title : titleCase(terms.ability.plural),
+        hidden : false
+    },
+    {
+        path: "/combat",
+        comp : <CombatComponent />,
+        title : titleCase(terms.combat.name),
         hidden : false
     },
     {

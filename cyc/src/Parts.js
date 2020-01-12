@@ -421,6 +421,34 @@ export function hitPoints(subtitle = true) {
     )
 }
 
+export function healing(subtitle = true) {
+    return(
+        <Fragment>
+            <div className={(subtitle? 'header2' : 'header1') +' serif bold'}>
+                Curar
+            </div>
+
+            <div className={'description'}>
+                A menos que resulte en muerte, el daño no es permanente.
+                <br />
+                Incluso la muerte es reversible a través de poderosa magia.
+                <br />
+                El descanso puede restaurar los {terms.hit.points.plural} de una criatura,
+                y {terms.spell.plural} o {terms.item.plural} pueden eliminar el daño en un instante.
+                <br /><br />
+                Cuando una criatura recibe curación de cualquier tipo,
+                los {terms.hit.points.plural} recuperados se agregan a sus {terms.hit.points.plural} actuales.
+                Los {terms.hit.points.plural} de una criatura no pueden exceder sus {terms.hit.points.max},
+                por lo que se pierden los {terms.hit.points.plural}  recuperados
+                en exceso de este número.
+                <br /><br />
+                Una criatura que ha muerto no puede recuperar {terms.hit.points.plural}  hasta
+                que la magia le haya devuelto la vida.
+            </div>
+        </Fragment>
+    )
+}
+
 export function noHitPoints(subtitle = true) {
     return(
         <Fragment>
