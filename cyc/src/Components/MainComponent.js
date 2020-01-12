@@ -5,6 +5,7 @@ import {terms} from "../Data/Terms";
 import {titleCase} from "../Utilities";
 import {MainMenu} from "./MainMenu";
 import {tree} from "../Tree";
+import {MapComponent} from "./MapComponent";
 
 
 class MainComponent extends Component {
@@ -21,12 +22,15 @@ class MainComponent extends Component {
                     <Switch>
                         {
                             tree.map(item =>
-
                                 <Route key={'Main-'+tree.indexOf(item)} path={item.path}>
                                     {item.comp}
                                 </Route>
                             )
                         }
+
+                        <Route exact path={'/map'}>
+                            <MapComponent />
+                        </Route>
                     </Switch>
                 </Router>
 

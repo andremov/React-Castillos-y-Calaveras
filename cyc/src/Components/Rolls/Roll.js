@@ -68,6 +68,24 @@ export class Roll extends Component {
         return(
             <Fragment>
                 {savingThrows(false)}
+
+                <div className={'description'}>
+
+                    <div className={'header3 serif bold'}>
+                        Will Saving Throw
+                    </div>
+                    Saving Throw relacionado con la fortaleza mental del personaje. Se utiliza el modifier de Saviduría.
+
+                    <div className={'header3 serif bold'}>
+                        Reflex Saving Throw
+                    </div>
+                    Saving Throw relacionado con los reflejos del personaje. Se utiliza el modifier de Destreza.
+
+                    <div className={'header3 serif bold'}>
+                        Fortitude Saving Throw
+                    </div>
+                    Saving Throw relacionado con la fortaleza del personaje. Se utiliza el modifier de Complexión.
+                </div>
             </Fragment>
         )
     }
